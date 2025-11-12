@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project-java-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project-java-frontend
+  template:
+    metadata:
+      labels:
+        app: project-java-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: "{{ .Values.frontend.image }}:{{ .Values.frontend.tag }}"
+          ports:
+            - containerPort: {{ .Values.frontend.port }}
