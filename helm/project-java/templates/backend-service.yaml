@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: project-java-backend
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: project-java-backend
   ports:
