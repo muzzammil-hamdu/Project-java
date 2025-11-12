@@ -1,6 +1,0 @@
-apiVersion: v2
-name: project-java
-description: Helm chart to deploy React frontend and Java backend using LoadBalancer
-type: application
-version: 1.0.0
-appVersion: "1.0"
