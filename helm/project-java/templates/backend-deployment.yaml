@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project-java-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project-java-backend
+  template:
+    metadata:
+      labels:
+        app: project-java-backend
+    spec:
+      containers:
+        - name: backend
+          image: "{{ .Values.backend.image }}:{{ .Values.backend.tag }}"
+          ports:
+            - containerPort: {{ .Values.backend.port }}
