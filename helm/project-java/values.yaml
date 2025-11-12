@@ -1,0 +1,9 @@
+frontend:
+  image: mujjuacr12333.azurecr.io/project-java-frontend
+  tag: latest
+  port: 8085
+
+backend:
+  image: mujjuacr12333.azurecr.io/project-java-backend
+  tag: latest
+  port: 8086
