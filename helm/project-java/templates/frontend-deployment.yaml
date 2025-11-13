@@ -11,6 +11,10 @@ spec:
     metadata:
       labels:
         app: project-java-frontend
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "{{ .Values.frontend.port }}"
+        prometheus.io/path: "/actuator/prometheus"
     spec:
       containers:
         - name: frontend
