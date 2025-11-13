@@ -11,6 +11,10 @@ spec:
     metadata:
       labels:
         app: project-java-backend
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "{{ .Values.backend.port }}"
+        prometheus.io/path: "/actuator/prometheus"
     spec:
       containers:
         - name: backend
